@@ -4,14 +4,23 @@ import numpy as np
 r0 = 0.13
 ds_start = 1.7
 ds_end = 2.13
-B0 = 3
+
 sol_half_length = 1.55
 r0_local = 0.13
 
+B0 = 3.
 B0_local_list = np.array([0.0001, 0.2, 0.4, 0.6, 0.8,
                           1.0, 1.2, 1.4, 1.6, 1.8, 2.0,
                           2.2, 2.4, 2.6, 2.8, 3.0])
-l_local_list = np.array([0.3, 0.4, 0.6, 0.8])
+l_local_list = np.array([0.4, 0.6, 0.8])
+
+
+# B0 = 2
+# B0_local_list = np.array([0.0001, 0.2, 0.4, 0.6, 0.8,
+#                           1.0, 1.2, 1.4, 1.6, 1.8, 2.0,
+#                           2.2, 2.4, 2.6, 2.8, 3.0,
+#                           3.25, 3.5, 3.75, 4])
+# l_local_list = np.array([0.4])
 
 
 cols = {str(ll): 0*B0_local_list for ll in l_local_list}

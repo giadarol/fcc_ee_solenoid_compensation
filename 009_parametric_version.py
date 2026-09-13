@@ -26,12 +26,12 @@ sol_half_length = 1.55
 ds_start = 1.7
 ds_end = 2.13
 
-B0 = 3 # T
+B0 = 2. # T
 r0 = 0.13
 
-B0_local = -2.5 # T
+B0_local = -0 # T
 r0_local = 0.13
-l_local = 0.3
+l_local = 0.4
 
 for ip_name in ip_names:
 
@@ -579,13 +579,13 @@ if plot:
     ax23 = fig2.add_subplot(4,1,3, sharex=ax1)
     ax23.plot(tw4d.s, tw4d.k0sl / tw4d.length * rigidity0)
     ax23.set_ylabel(r'$B_x$ [T]')
-    ax23.set_ylim(-0.25, 0.15)
+    ax23.set_ylim(-0.3, 0.2)
     ax23.grid(True)
 
     ax24 = fig2.add_subplot(4,1,4, sharex=ax1)
     ax24.plot(tw4d.s, tw4d.rad_int_i5y_integrand)
     ax24.set_ylabel(r'$i_5(s)$')
-    ax24.set_ylim(0, 2.2e-13)
+    ax24.set_ylim(0, 3.5e-13)
     ax24.grid(True)
     fig2.subplots_adjust(bottom=0.08, hspace=0.3)
 
