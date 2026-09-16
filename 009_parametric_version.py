@@ -3,6 +3,7 @@
 
 import xtrack as xt
 import time
+from scipy.constants import e as qe
 
 from xtrack._temp.boris_and_solenoid_map.solenoid_field import SolenoidField
 import numpy as np
@@ -11,6 +12,7 @@ from tilted_solenoid import TiltedSolenoid
 t1 = time.time()
 
 plot = True
+radiation_analysis = True
 
 env = xt.load('fccee_z_lcc.json')
 line = env.fccee_p_ring
@@ -29,7 +31,7 @@ ds_end = 2.13
 B0 = 2. # T
 r0 = 0.13
 
-B0_local = -0 # T
+B0_local = -1.5 # T
 r0_local = 0.13
 l_local = 0.4
 
@@ -504,8 +506,6 @@ for ip_name in tw4d.rows['ip.*'].name:
 t2 = time.time()
 print(f'Took {t2-t1} s')
 
-
-
 out = {
     'B0': B0,
     'r0': r0,
@@ -517,6 +517,30 @@ out = {
     'l_local': l_local,
     'gemitt_y': float(tw4d.rad_int_eq_gemitt_y) * 4 # for 4 ips
 }
+
+ip_plot = 'ipa'
+
+######################
+# Radiation analysis #
+######################
+if radiation_analysis:
+    line.configure_radiation(model='mean')
+    line.compensate_radiation_energy_loss()
+    tw_rad = line.twiss6d(strengths=True, radiation_analysis=True)
+
+    energy_eV = (
+        tw_rad.ptau * line.particle_ref.p0c[0]
+        + line.particle_ref.energy0[0]
+    )
+    dE_eV = -np.diff(energy_eV, append=energy_eV[-1])
+    length = tw_rad.length
+    mask_len = length > 0
+    dE_ds_eV_per_m = np.zeros_like(dE_eV)
+    dE_ds_eV_per_m[mask_len] = dE_eV[mask_len] / length[mask_len]
+    dE_ds_eV_per_m[dE_ds_eV_per_m < 0] = 0.0
+
+    tw_rad_ip = tw_rad.rows[f'dy_match_l_{ip_plot}':f'dy_match_r_{ip_plot}']
+    sr_power = (tw_rad_ip.delta[-1] - tw_rad_ip.delta[0])*line.particle_ref.energy0[0] * 2.2e11*11200*qe*3300
 
 from pprint import pp
 pp(out)
@@ -531,7 +555,7 @@ if plot:
 
     import matplotlib.pyplot as plt
     plt.close('all')
-    ip_plot = 'ipa'
+
     tw4d.zero_at(ip_plot)
     tw4d.zero_at(ip_plot)
 
@@ -593,6 +617,14 @@ if plot:
 
     # fname in suptitle (small font)
     plt.suptitle(fout, fontsize=8)
+
+    if radiation_analysis:
+        plt.figure()
+        plt.plot(tw_rad.s, dE_ds_eV_per_m*1e-9)
+        plt.xlabel('s [m]')
+        plt.ylabel(r'$dE/ds$ [GeV/m]')
+        plt.title('Radiation Energy Loss per Unit Length')
+        plt.grid(True)
 
 out_path = 'results/' + fout + '.json'
 print(f'Saving results to {out_path}')
