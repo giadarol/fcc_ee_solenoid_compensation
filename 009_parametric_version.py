@@ -156,28 +156,49 @@ for ip_name in ip_names:
     tt_region = line.get_table().rows[f'end_ds_start_straight_{ip_name}':f'end_straight_start_ds_{ip_name}']
     s_ip = tt_region['s', ip_name]
 
+    l_kicker = ds_end - ds_start
 
-    tt_kicker_right= tt_region.rows[s_ip + ds_start: s_ip + ds_end:'s']
-    assert np.all(tt_kicker_right.element_type == 'VariableSolenoid')
-    l_tot = tt_kicker_right['s_end'][-1] - tt_kicker_right['s_start'][0]
+    s_kicker_right_a = s_ip + ds_start
+    tt_kicker_right_a= tt_region.rows[s_kicker_right_a: s_kicker_right_a + l_kicker / 2:'s']
+    tt_kicker_right_b= tt_region.rows[s_kicker_right_a + l_kicker / 2:s_kicker_right_a + l_kicker:'s']
+    assert np.all(tt_kicker_right_a.element_type == 'VariableSolenoid')
+    assert np.all(tt_kicker_right_b.element_type == 'VariableSolenoid')
+    l_tot_right_a = tt_kicker_right_a['s_end'][-1] - tt_kicker_right_a['s_start'][0]
+    l_tot_right_b = tt_kicker_right_b['s_end'][-1] - tt_kicker_right_b['s_start'][0]
 
-    env[f'acbh1_sol_right_{ip_name}'] = 0
-    env[f'acbv1_sol_right_{ip_name}'] = 0
-    for nn in tt_kicker_right.name:
+    env[f'acbh1a_sol_right_{ip_name}'] = 0
+    env[f'acbv1a_sol_right_{ip_name}'] = 0
+    env[f'acbh1b_sol_right_{ip_name}'] = 0
+    env[f'acbv1b_sol_right_{ip_name}'] = 0
+    for nn in tt_kicker_right_a.name:
         ee = env.get(nn)
-        env.ref[nn].knl[0] += env.ref[f'acbh1_sol_right_{ip_name}']/l_tot * ee.length
-        env.ref[nn].ksl[0] += env.ref[f'acbv1_sol_right_{ip_name}']/l_tot * ee.length
-
-    tt_kicker_left = tt_region.rows[s_ip - ds_end: s_ip - ds_start:'s']
-    assert np.all(tt_kicker_left.element_type == 'VariableSolenoid')
-    l_tot = tt_kicker_left['s_end'][-1] - tt_kicker_left['s_start'][0]
-
-    env[f'acbh1_sol_left_{ip_name}'] = 0
-    env[f'acbv1_sol_left_{ip_name}'] = 0
-    for nn in tt_kicker_left.name:
+        env.ref[nn].knl[0] += env.ref[f'acbh1a_sol_right_{ip_name}']/l_tot_right_a * ee.length
+        env.ref[nn].ksl[0] += env.ref[f'acbv1a_sol_right_{ip_name}']/l_tot_right_a * ee.length
+    for nn in tt_kicker_right_b.name:
         ee = env.get(nn)
-        env.ref[nn].knl[0] += env.ref[f'acbh1_sol_left_{ip_name}']/l_tot * ee.length
-        env.ref[nn].ksl[0] += env.ref[f'acbv1_sol_left_{ip_name}']/l_tot * ee.length
+        env.ref[nn].knl[0] += env.ref[f'acbh1b_sol_right_{ip_name}']/l_tot_right_a * ee.length
+        env.ref[nn].ksl[0] += env.ref[f'acbv1b_sol_right_{ip_name}']/l_tot_right_a * ee.length
+
+    s_kicker_left_a = s_ip - ds_start
+    tt_kicker_left_a= tt_region.rows[s_kicker_left_a - l_kicker / 2: s_kicker_left_a :'s']
+    tt_kicker_left_b= tt_region.rows[s_kicker_left_a - l_kicker:s_kicker_left_a - l_kicker / 2:'s']
+    assert np.all(tt_kicker_left_a.element_type == 'VariableSolenoid')
+    assert np.all(tt_kicker_left_b.element_type == 'VariableSolenoid')
+    l_tot_left_a = tt_kicker_left_a['s_end'][-1] - tt_kicker_left_a['s_start'][0]
+    l_tot_left_b = tt_kicker_left_b['s_end'][-1] - tt_kicker_left_b['s_start'][0]
+
+    env[f'acbh1a_sol_left_{ip_name}'] = 0
+    env[f'acbv1a_sol_left_{ip_name}'] = 0
+    env[f'acbh1b_sol_left_{ip_name}'] = 0
+    env[f'acbv1b_sol_left_{ip_name}'] = 0
+    for nn in tt_kicker_left_a.name:
+        ee = env.get(nn)
+        env.ref[nn].knl[0] += env.ref[f'acbh1a_sol_left_{ip_name}']/l_tot_left_a * ee.length
+        env.ref[nn].ksl[0] += env.ref[f'acbv1a_sol_left_{ip_name}']/l_tot_left_a * ee.length
+    for nn in tt_kicker_left_b.name:
+        ee = env.get(nn)
+        env.ref[nn].knl[0] += env.ref[f'acbh1b_sol_left_{ip_name}']/l_tot_left_a * ee.length
+        env.ref[nn].ksl[0] += env.ref[f'acbv1b_sol_left_{ip_name}']/l_tot_right_a * ee.length
 
     # Insert markers and dedicated correctors for sol compensation
     line.insert([
@@ -206,10 +227,10 @@ config['ipa'] = {
     'corr_2_right_on_quad': 'qd0cr.0',
     'corr_3_right_on_quad': 'qf1ar.0',
     'corr_4_right_on_quad': 'qf1br.0',
-    'corr_1_left_on_quad': 'qd0al.3',
-    'corr_2_left_on_quad': 'qd0bl.3',
-    'corr_3_left_on_quad': 'qf1bl.3',
-    'corr_4_left_on_quad': 'qf1cl.3',
+    'corr_1_left_on_quad': 'qd0bl.3',
+    'corr_2_left_on_quad': 'qd0cl.3',
+    'corr_3_left_on_quad': 'qf1al.3',
+    'corr_4_left_on_quad': 'qf1bl.3',
 }
 
 
@@ -310,6 +331,10 @@ for ip_name in ip_names:
     env['corr_sol_left_'+ip_name].ksl[0] += env.ref[f'acbv6_sol_left_{ip_name}']
 
     # Match orbit and vertical dispersion
+    env[f'acbv1a_sol_right_{ip_name}'] = -0.0004 / 2
+    env[f'acbv1b_sol_right_{ip_name}'] = -0.0002 / 2
+    env[f'acbv1a_sol_left_{ip_name}'] = -0.0004 / 2
+    env[f'acbv1b_sol_left_{ip_name}'] = -0.0002 / 2
     opt_orbit = line.match_knob(
         knob_name=f'on_sol_orbit_corr_{ip_name}',
         run=False,
@@ -320,13 +345,15 @@ for ip_name in ip_names:
         end='dy_match_r_'+ip_name,
         init_at=ip_name,
         vary=xt.VaryList([
-            f'acbh1_sol_right_{ip_name}', f'acbv1_sol_right_{ip_name}',
+            # f'acbh1_sol_right_{ip_name}',
+            # f'acbv1b_sol_right_{ip_name}',
             f'acbh2_sol_right_{ip_name}', f'acbh3_sol_right_{ip_name}',
             f'acbh4_sol_right_{ip_name}', f'acbh5_sol_right_{ip_name}',
             f'acbh6_sol_right_{ip_name}', f'acbv2_sol_right_{ip_name}',
             f'acbv3_sol_right_{ip_name}', f'acbv4_sol_right_{ip_name}',
             f'acbv5_sol_right_{ip_name}', f'acbv6_sol_right_{ip_name}',
-            f'acbh1_sol_left_{ip_name}', f'acbv1_sol_left_{ip_name}',
+            # f'acbh1_sol_left_{ip_name}',
+            # f'acbv1b_sol_left_{ip_name}',
             f'acbh2_sol_left_{ip_name}', f'acbh3_sol_left_{ip_name}',
             f'acbh4_sol_left_{ip_name}', f'acbh5_sol_left_{ip_name}',
             f'acbh6_sol_left_{ip_name}', f'acbv2_sol_left_{ip_name}',
@@ -334,8 +361,8 @@ for ip_name in ip_names:
             f'acbv5_sol_left_{ip_name}', f'acbv6_sol_left_{ip_name}',
             ], step=1e-6),
         targets=[
-            xt.TargetSet(x=0, px=0, y=0, py=0, dy=0, dpy=0, at=xt.END),
-            xt.TargetSet(x=0, px=0, y=0, py=0, dy=0, dpy=0, at=xt.START)
+            xt.TargetSet(x=0, px=0, y=0, py=0, dy=0, dpy=0, dx=0, dpx=0, at=xt.END),
+            xt.TargetSet(x=0, px=0, y=0, py=0, dy=0, dpy=0, dx=0, dpx=0, at=xt.START)
         ])
     opt_orbit.solve()
 
