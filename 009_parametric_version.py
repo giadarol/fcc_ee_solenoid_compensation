@@ -17,21 +17,21 @@ radiation_analysis = True
 env = xt.load('fccee_z_lcc.json')
 line = env.fccee_p_ring
 
-ip_names = ['ipa'] #, 'ipd', 'ipg', 'ipj']
+ip_names = ['ipa']
 
 # Tilt with respect to the beam axis
 theta = -0.015
 
-sol_half_length = 1.55
+sol_half_length = 1.5
 
 # Location of first dipole corrector (overlaid with solenoid)
-ds_start = 1.7
+ds_start = 1.53
 ds_end = 2.13
 
 B0 = 2. # T
 r0 = 0.13
 
-B0_local = -1.5 # T
+B0_local = 0; #-1.5 # T
 r0_local = 0.13
 l_local = 0.4
 
@@ -202,86 +202,20 @@ config['ipa'] = {
         'qd0al.3', 'qd0bl.3', 'qd0cl.3', 'qf1al.3', 'qf1bl.3', 'qf1cl.3', 'qf1dl.3'],
     'doublet_quad_right': [
         'qd0ar.0', 'qd0br.0', 'qd0cr.0', 'qf1ar.0', 'qf1br.0', 'qf1cr.0', 'qf1dr.0'],
-    'corr_1_right_on_quad': 'qd0ar.0',
-    'corr_2_right_on_quad': 'qd0br.0',
+    'corr_1_right_on_quad': 'qd0br.0',
+    'corr_2_right_on_quad': 'qd0cr.0',
     'corr_3_right_on_quad': 'qf1ar.0',
     'corr_4_right_on_quad': 'qf1br.0',
     'corr_1_left_on_quad': 'qd0al.3',
     'corr_2_left_on_quad': 'qd0bl.3',
-    'corr_3_left_on_quad': 'qf1al.3',
-    'corr_4_left_on_quad': 'qf1bl.3',
-}
-config['ipd'] = {
-    'quad_for_optics_correction': [
-        'qd0ar.1', 'qd0br.1', 'qd0cr.1', 'qf1ar.1', 'qf1br.1', 'qf1cr.1',
-        'qf1dr.1', 'qf2r.1', 'qd3r.1', 'qd4r.1', 'qf5r.1', 'qd6r.1',
-        'qd6l.0', 'qf5l.0', 'qd4l.0', 'qd3l.0', 'qf2l.0', 'qf1dl.0', 'qf1cl.0',
-        'qf1bl.0', 'qf1al.0', 'qd0cl.0', 'qd0bl.0', 'qd0al.0'
-        ],
-    'doublet_quad_left': [
-        'qd0al.0', 'qd0bl.0', 'qd0cl.0', 'qf1al.0', 'qf1bl.0', 'qf1cl.0', 'qf1dl.0'],
-    'doublet_quad_right': [
-        'qd0ar.1', 'qd0br.1', 'qd0cr.1', 'qf1ar.1', 'qf1br.1', 'qf1cr.1', 'qf1dr.1'],
-    'corr_1_right_on_quad': 'qd0ar.1',
-    'corr_2_right_on_quad': 'qd0br.1',
-    'corr_3_right_on_quad': 'qf1ar.1',
-    'corr_4_right_on_quad': 'qf1br.1',
-    'corr_1_left_on_quad': 'qd0al.0',
-    'corr_2_left_on_quad': 'qd0bl.0',
-    'corr_3_left_on_quad': 'qf1al.0',
-    'corr_4_left_on_quad': 'qf1bl.0',
-}
-config['ipg'] = {
-    'quad_for_optics_correction': [
-        'qd0ar.2', 'qd0br.2', 'qd0cr.2', 'qf1ar.2', 'qf1br.2', 'qf1cr.2',
-        'qf1dr.2', 'qf2r.2', 'qd3r.2', 'qd4r.2', 'qf5r.2', 'qd6r.2',
-        'qd6l.1', 'qf5l.1', 'qd4l.1', 'qd3l.1', 'qf2l.1', 'qf1dl.1', 'qf1cl.1',
-        'qf1bl.1', 'qf1al.1', 'qd0cl.1', 'qd0bl.1', 'qd0al.1'
-        ],
-    'doublet_quad_left': [
-        'qd0al.1', 'qd0bl.1', 'qd0cl.1', 'qf1al.1', 'qf1bl.1', 'qf1cl.1', 'qf1dl.1'],
-    'doublet_quad_right': [
-        'qd0ar.2', 'qd0br.2', 'qd0cr.2', 'qf1ar.2', 'qf1br.2', 'qf1cr.2', 'qf1dr.2'],
-    'corr_1_right_on_quad': 'qd0ar.2',
-    'corr_2_right_on_quad': 'qd0br.2',
-    'corr_3_right_on_quad': 'qf1ar.2',
-    'corr_4_right_on_quad': 'qf1br.2',
-    'corr_1_left_on_quad': 'qd0al.1',
-    'corr_2_left_on_quad': 'qd0bl.1',
-    'corr_3_left_on_quad': 'qf1al.1',
-    'corr_4_left_on_quad': 'qf1bl.1',
+    'corr_3_left_on_quad': 'qf1bl.3',
+    'corr_4_left_on_quad': 'qf1cl.3',
 }
 
-config['ipj'] = {
-    'quad_for_optics_correction': [
-        'qd0ar.3', 'qd0br.3', 'qd0cr.3', 'qf1ar.3', 'qf1br.3', 'qf1cr.3',
-        'qf1dr.3', 'qf2r.3', 'qd3r.3', 'qd4r.3', 'qf5r.3', 'qd6r.3',
-        'qd6l.2', 'qf5l.2', 'qd4l.2', 'qd3l.2', 'qf2l.2', 'qf1dl.2', 'qf1cl.2',
-        'qf1bl.2', 'qf1al.2', 'qd0cl.2', 'qd0bl.2', 'qd0al.2'
-    ],
-    'doublet_quad_left': [
-        'qd0al.2', 'qd0bl.2', 'qd0cl.2', 'qf1al.2', 'qf1bl.2', 'qf1cl.2', 'qf1dl.2'],
-    'doublet_quad_right': [
-        'qd0ar.3', 'qd0br.3', 'qd0cr.3', 'qf1ar.3', 'qf1br.3', 'qf1cr.3', 'qf1dr.3'],
-    'corr_1_right_on_quad': 'qd0ar.3',
-    'corr_2_right_on_quad': 'qd0br.3',
-    'corr_3_right_on_quad': 'qf1ar.3',
-    'corr_4_right_on_quad': 'qf1br.3',
-    'corr_1_left_on_quad': 'qd0al.2',
-    'corr_2_left_on_quad': 'qd0bl.2',
-    'corr_3_left_on_quad': 'qf1al.2',
-    'corr_4_left_on_quad': 'qf1bl.2',
-}
 
 # Start with clean machine
 line['on_sol_ipa'] = 0
-line['on_sol_ipd'] = 0
-line['on_sol_ipg'] = 0
-line['on_sol_ipj'] = 0
 line['on_comp_sol_ipa'] = 0
-line['on_comp_sol_ipd'] = 0
-line['on_comp_sol_ipg'] = 0
-line['on_comp_sol_ipj'] = 0
 
 optimizers = {}
 for ip_name in ip_names:
