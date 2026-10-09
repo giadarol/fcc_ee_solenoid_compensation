@@ -22,16 +22,17 @@ ip_names = ['ipa']
 # Tilt with respect to the beam axis
 theta = -0.015
 
-sol_half_length = 1.5
+sol_half_length = 1.4
 
 # Location of first dipole corrector (overlaid with solenoid)
 ds_start = 1.53
 ds_end = 2.13
+ds_split = 0.3 * (ds_end - ds_start)
 
-B0 = 2. # T
+B0 = 3. # T
 r0 = 0.13
 
-B0_local = 0; #-1.5 # T
+B0_local = -2.
 r0_local = 0.13
 l_local = 0.4
 
@@ -159,8 +160,8 @@ for ip_name in ip_names:
     l_kicker = ds_end - ds_start
 
     s_kicker_right_a = s_ip + ds_start
-    tt_kicker_right_a= tt_region.rows[s_kicker_right_a: s_kicker_right_a + l_kicker / 2:'s']
-    tt_kicker_right_b= tt_region.rows[s_kicker_right_a + l_kicker / 2:s_kicker_right_a + l_kicker:'s']
+    tt_kicker_right_a= tt_region.rows[s_kicker_right_a: s_kicker_right_a + ds_split:'s']
+    tt_kicker_right_b= tt_region.rows[s_kicker_right_a + ds_split:s_kicker_right_a + l_kicker:'s']
     assert np.all(tt_kicker_right_a.element_type == 'VariableSolenoid')
     assert np.all(tt_kicker_right_b.element_type == 'VariableSolenoid')
     l_tot_right_a = tt_kicker_right_a['s_end'][-1] - tt_kicker_right_a['s_start'][0]
@@ -180,8 +181,8 @@ for ip_name in ip_names:
         env.ref[nn].ksl[0] += env.ref[f'acbv1b_sol_right_{ip_name}']/l_tot_right_a * ee.length
 
     s_kicker_left_a = s_ip - ds_start
-    tt_kicker_left_a= tt_region.rows[s_kicker_left_a - l_kicker / 2: s_kicker_left_a :'s']
-    tt_kicker_left_b= tt_region.rows[s_kicker_left_a - l_kicker:s_kicker_left_a - l_kicker / 2:'s']
+    tt_kicker_left_a= tt_region.rows[s_kicker_left_a - ds_split: s_kicker_left_a :'s']
+    tt_kicker_left_b= tt_region.rows[s_kicker_left_a - l_kicker:s_kicker_left_a - ds_split:'s']
     assert np.all(tt_kicker_left_a.element_type == 'VariableSolenoid')
     assert np.all(tt_kicker_left_b.element_type == 'VariableSolenoid')
     l_tot_left_a = tt_kicker_left_a['s_end'][-1] - tt_kicker_left_a['s_start'][0]
@@ -331,10 +332,12 @@ for ip_name in ip_names:
     env['corr_sol_left_'+ip_name].ksl[0] += env.ref[f'acbv6_sol_left_{ip_name}']
 
     # Match orbit and vertical dispersion
-    env[f'acbv1a_sol_right_{ip_name}'] = -0.0004 / 2
-    env[f'acbv1b_sol_right_{ip_name}'] = -0.0002 / 2
-    env[f'acbv1a_sol_left_{ip_name}'] = -0.0004 / 2
-    env[f'acbv1b_sol_left_{ip_name}'] = -0.0002 / 2
+    env[f'acbv1a_sol_right_{ip_name}'] = -0.0001
+    env[f'acbv1a_sol_left_{ip_name}'] = -0.0001
+
+    env[f'acbv3_sol_right_{ip_name}'] = f'acbv2_sol_right_{ip_name}'
+    env[f'acbv3_sol_left_{ip_name}'] = f'acbv2_sol_left_{ip_name}'
+
     opt_orbit = line.match_knob(
         knob_name=f'on_sol_orbit_corr_{ip_name}',
         run=False,
@@ -346,19 +349,29 @@ for ip_name in ip_names:
         init_at=ip_name,
         vary=xt.VaryList([
             # f'acbh1_sol_right_{ip_name}',
-            # f'acbv1b_sol_right_{ip_name}',
-            f'acbh2_sol_right_{ip_name}', f'acbh3_sol_right_{ip_name}',
-            f'acbh4_sol_right_{ip_name}', f'acbh5_sol_right_{ip_name}',
-            f'acbh6_sol_right_{ip_name}', f'acbv2_sol_right_{ip_name}',
-            f'acbv3_sol_right_{ip_name}', f'acbv4_sol_right_{ip_name}',
-            f'acbv5_sol_right_{ip_name}', f'acbv6_sol_right_{ip_name}',
+            f'acbh2_sol_right_{ip_name}',
+            f'acbh3_sol_right_{ip_name}',
+            f'acbh4_sol_right_{ip_name}',
+            f'acbh5_sol_right_{ip_name}',
+            f'acbh6_sol_right_{ip_name}',
+            f'acbv1b_sol_right_{ip_name}',
+            f'acbv2_sol_right_{ip_name}',
+            # f'acbv3_sol_right_{ip_name}',
+            f'acbv4_sol_right_{ip_name}',
+            f'acbv5_sol_right_{ip_name}',
+            f'acbv6_sol_right_{ip_name}',
             # f'acbh1_sol_left_{ip_name}',
-            # f'acbv1b_sol_left_{ip_name}',
-            f'acbh2_sol_left_{ip_name}', f'acbh3_sol_left_{ip_name}',
-            f'acbh4_sol_left_{ip_name}', f'acbh5_sol_left_{ip_name}',
-            f'acbh6_sol_left_{ip_name}', f'acbv2_sol_left_{ip_name}',
-            f'acbv3_sol_left_{ip_name}', f'acbv4_sol_left_{ip_name}',
-            f'acbv5_sol_left_{ip_name}', f'acbv6_sol_left_{ip_name}',
+            f'acbh2_sol_left_{ip_name}',
+            f'acbh3_sol_left_{ip_name}',
+            f'acbh4_sol_left_{ip_name}',
+            f'acbh5_sol_left_{ip_name}',
+            f'acbh6_sol_left_{ip_name}',
+            f'acbv1b_sol_left_{ip_name}',
+            f'acbv2_sol_left_{ip_name}',
+            # f'acbv3_sol_left_{ip_name}',
+            f'acbv4_sol_left_{ip_name}',
+            f'acbv5_sol_left_{ip_name}',
+            f'acbv6_sol_left_{ip_name}',
             ], step=1e-6),
         targets=[
             xt.TargetSet(x=0, px=0, y=0, py=0, dy=0, dpy=0, dx=0, dpx=0, at=xt.END),
@@ -588,6 +601,6 @@ if plot:
         plt.grid(True)
 
 out_path = 'results/' + fout + '.json'
-print(f'Saving results to {out_path}')
-xt.json.dump(out, out_path)
+# print(f'Saving results to {out_path}')
+# xt.json.dump(out, out_path)
 
