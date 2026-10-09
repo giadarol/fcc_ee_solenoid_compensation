@@ -22,17 +22,19 @@ ip_names = ['ipa']
 # Tilt with respect to the beam axis
 theta = -0.015
 
-sol_half_length = 1.4
+sol_half_length = 1.43
 
 # Location of first dipole corrector (overlaid with solenoid)
 ds_start = 1.53
 ds_end = 2.18
 ds_split = 0.4 * (ds_end - ds_start)
 
-B0 = 3. # T
+k0sl_first_corr = -0.00015
+
+B0 = 3 # T
 r0 = 0.13
 
-B0_local = -2.
+B0_local = -2/3 * B0
 r0_local = 0.13
 l_local = 0.4
 
@@ -332,8 +334,8 @@ for ip_name in ip_names:
     env['corr_sol_left_'+ip_name].ksl[0] += env.ref[f'acbv6_sol_left_{ip_name}']
 
     # Match orbit and vertical dispersion
-    env[f'acbv1a_sol_right_{ip_name}'] = -0.00015
-    env[f'acbv1a_sol_left_{ip_name}'] = -0.00015
+    env[f'acbv1a_sol_right_{ip_name}'] = k0sl_first_corr
+    env[f'acbv1a_sol_left_{ip_name}'] = k0sl_first_corr
 
     env[f'acbv3_sol_right_{ip_name}'] = f'acbv2_sol_right_{ip_name}'
     env[f'acbv3_sol_left_{ip_name}'] = f'acbv2_sol_left_{ip_name}'
