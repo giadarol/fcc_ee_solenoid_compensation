@@ -24,19 +24,17 @@ theta = -0.015
 
 sol_half_length = 1.43
 
-# Location of first dipole corrector (overlaid with solenoid)
-ds_start = 1.53
-ds_end = 2.18
-ds_split = 0.4 * (ds_end - ds_start)
-
-k0sl_first_corr = -0.00015
-
 B0 = 3 # T
 r0 = 0.13
 
-B0_local = -2/3 * B0
-r0_local = 0.13
-l_local = 0.4
+ds_start = 1.53                       # m, unchanged
+ds_end = 2.18                         # m, unchanged
+ds_split = 0.27708305133321315         # m from ds_start
+k0sl_first_corr = -1.8048280838383517e-4
+
+B0_local = -3.4169366260769642         # T
+r0_local = 0.3126763805498851          # m
+l_local = 0.25744770191969646          # m
 
 for ip_name in ip_names:
 
