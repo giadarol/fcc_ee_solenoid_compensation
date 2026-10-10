@@ -27,14 +27,14 @@ sol_half_length = 1.43
 B0 = 3 # T
 r0 = 0.13
 
-ds_start = 1.53                       # m, unchanged
-ds_end = 2.18                         # m, unchanged
-ds_split = 0.27708305133321315         # m from ds_start
-k0sl_first_corr = -1.8048280838383517e-4
+ds_start = 1.53                     # m, unchanged
+ds_end = 2.18                       # m, unchanged
+ds_split = 0.28528500560662184       # m from ds_start
+k0sl_first_corr = -1.0968024668656853e-4
 
-B0_local = -3.4169366260769642         # T
-r0_local = 0.3126763805498851          # m
-l_local = 0.25744770191969646          # m
+B0_local = -2.0 * B0 / 3            # T
+r0_local = 0.1499                   # m
+l_local = 0.5281902575699856         # m
 
 for ip_name in ip_names:
 
