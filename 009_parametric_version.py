@@ -22,19 +22,19 @@ ip_names = ['ipa']
 # Tilt with respect to the beam axis
 theta = -0.015
 
-sol_half_length = 1.43
-
 B0 = 3 # T
 r0 = 0.13
 
-ds_start = 1.53                     # m, unchanged
-ds_end = 2.18                       # m, unchanged
-ds_split = 0.28528500560662184       # m from ds_start
-k0sl_first_corr = -1.0968024668656853e-4
+sol_half_length = 1.38                # m; screening coils also start here
 
-B0_local = -2.0 * B0 / 3            # T
-r0_local = 0.1499                   # m
-l_local = 0.5281902575699856         # m
+ds_start = 1.53                       # m
+ds_end = 2.18                         # m
+ds_split = 0.2992680902334539          # m from ds_start
+k0sl_first_corr = -1.0199704431567958e-4
+
+B0_local = -2.0                       # T
+r0_local = 0.1499                     # m
+l_local = 0.5884884906480151           # m
 
 for ip_name in ip_names:
 
