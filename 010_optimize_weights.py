@@ -1,8 +1,9 @@
-"""Optimize relative first-corrector weights with the local solenoid off.
+"""Optimize relative first-corrector weights using the configured solenoid fields.
 
 Run with the py313 Python from this directory. The last weight is fixed at 1
 to remove the common-scale degeneracy with the matched acbv1 knob. Signed
 weights are allowed. Results and matching logs go to optimization_010_weights.
+Field and geometry parameters are read from 010_parametric_version.py.
 The production script is not modified by this driver.
 """
 import ast
@@ -37,7 +38,7 @@ def source(weights, reusable=False, radiation=False):
         if not isinstance(node, ast.Assign) or len(node.targets) != 1:
             continue
         name = getattr(node.targets[0], 'id', None)
-        overrides = dict(B0_local=0., plot=False, radiation_analysis=radiation)
+        overrides = dict(plot=False, radiation_analysis=radiation)
         if name in overrides:
             node.value = ast.Constant(overrides[name])
         elif name == 'first_corr_segments':
@@ -86,7 +87,9 @@ class Evaluator:
         weights = [*key, 1.]
         self.count += 1
         start = time.time()
-        result = dict(index=self.count, weights=weights)
+        result = dict(index=self.count, weights=weights,
+                      B0_local=self.ns['B0_local'], r0_local=self.ns['r0_local'],
+                      l_local=self.ns['l_local'])
         try:
             with contextlib.redirect_stdout(self.log), contextlib.redirect_stderr(self.log):
                 print('\nEVALUATION', self.count, weights, flush=True)
@@ -131,6 +134,7 @@ def fresh(weights, radiation=False):
         with contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
             exec(source(weights, radiation=radiation), ns)
     return dict(weights=weights, emittance_pm_4ip=ns['out']['gemitt_y'] * 1e12,
+                B0_local=ns['B0_local'], r0_local=ns['r0_local'], l_local=ns['l_local'],
                 matched_knobs={side: float(ns['env'][f'acbv1_sol_{side}_ipa'])
                                for side in ['right', 'left']})
 
@@ -141,6 +145,10 @@ if __name__ == '__main__':
     parser.add_argument('--start', nargs='+', type=float)
     parser.add_argument('--maxfev', type=int, default=300)
     parser.add_argument('--method', choices=['Nelder-Mead', 'BFGS'], default='Nelder-Mead')
+    parser.add_argument('--eps', type=float, default=1e-3,
+                        help='BFGS finite-difference step in relative weights')
+    parser.add_argument('--gtol', type=float, default=2e-4,
+                        help='BFGS gradient tolerance')
     args = parser.parse_args()
     DIRECTORY = ROOT / args.directory
     evaluator = Evaluator()
@@ -156,7 +164,7 @@ if __name__ == '__main__':
             initial, initial + 0.2 * np.eye(len(initial))]),
             maxfev=args.maxfev, xatol=2e-5, fatol=1e-7)
     else:
-        options = dict(eps=1e-4, gtol=2e-5, maxiter=40)
+        options = dict(eps=args.eps, gtol=args.gtol, maxiter=40)
     result = minimize(evaluator, initial, method=args.method, options=options)
     (DIRECTORY / 'optimizer.json').write_text(json.dumps(dict(
         success=bool(result.success), message=str(result.message),
