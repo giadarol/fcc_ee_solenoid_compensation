@@ -25,7 +25,7 @@ theta = -0.015
 B0 = 3 # T
 r0 = 0.13
 
-B0_local = -1.0                    # T
+B0_local = -2.0 * B0 / 3.          # T
 r0_local = 0.1499                  # m
 l_local = 0.6                      # m
 
@@ -38,11 +38,11 @@ sol_half_length = 1.25                # m; screening coils also start here
 # Weights are used as given, without normalization. Each side has its own
 # optimization knob. All segments share the knob with relative weights.
 first_corr_segments = [
-    {'s_range': (1.53, 1.58), 'weight': 0.6973220955960715},
-    {'s_range': (1.58, 1.63), 'weight': 0.5102618570288843},
-    {'s_range': (1.63, 1.68), 'weight': 0.4360161127360068},
-    {'s_range': (1.68, 1.73), 'weight': 0.41433217591465143},
-    {'s_range': (1.78, 1.965), 'weight': 1.7513371578458508},
+    {'s_range': (1.53, 1.58), 'weight': 0.2648294952640936},
+    {'s_range': (1.58, 1.63), 'weight': 0.250815344329937},
+    {'s_range': (1.63, 1.68), 'weight': 0.2651494981081337},
+    {'s_range': (1.68, 1.73), 'weight': 0.3180567693449662},
+    {'s_range': (1.78, 1.965), 'weight': 2.1738018106168324},
     {'s_range': (2.015, 2.2), 'weight': 1.0},
 ]
 
@@ -132,7 +132,8 @@ for ip_name in ip_names:
 
     # Force solenoid field at edges to be zero (ax, ay zero at entry and exit)
     env[ele_names[0]].ks_profile[0] = 0
-    env[ele_names[-1]].ks_profile[-1] = 0
+    # Use the explicit index so the field stays zero when on_sol is toggled.
+    env[ele_names[-1]].ks_profile[1] = 0
 
     # Assemble the solenoid
     line_solenoid = env.new_line(components=ele_names)
@@ -166,7 +167,7 @@ for ip_name in ip_names:
 
     # Force compensation solenoid field at edges to be zero
     env[ele_names_comp[0]].ks_profile[0] = 0
-    env[ele_names_comp[-1]].ks_profile[-1] = 0
+    env[ele_names_comp[-1]].ks_profile[1] = 0
     line_comp_solenoid = env.new_line(components=ele_names_comp)
 
     # Measure integrated field compensation solenoid

@@ -1,0 +1,67 @@
+{
+  "weights": [
+    -0.4447022669048761,
+    -0.3534301615560382,
+    -0.22304279559440035,
+    0.0005219200541165554,
+    3.1989783169247077,
+    1.0
+  ],
+  "emittance_pm_4ip": 0.7661749672257164,
+  "B0_local": -4.0,
+  "r0_local": 0.1499,
+  "l_local": 0.6,
+  "matched_knobs": {
+    "right": -4.809926170403152e-05,
+    "left": -4.8356607615862257e-05
+  },
+  "segments": [
+    {
+      "s_range": [
+        1.53,
+        1.58
+      ],
+      "weight": -0.4447022669048761
+    },
+    {
+      "s_range": [
+        1.58,
+        1.63
+      ],
+      "weight": -0.3534301615560382
+    },
+    {
+      "s_range": [
+        1.63,
+        1.68
+      ],
+      "weight": -0.22304279559440035
+    },
+    {
+      "s_range": [
+        1.68,
+        1.73
+      ],
+      "weight": 0.0005219200541165554
+    },
+    {
+      "s_range": [
+        1.78,
+        1.965
+      ],
+      "weight": 3.1989783169247077
+    },
+    {
+      "s_range": [
+        2.015,
+        2.2
+      ],
+      "weight": 1.0
+    }
+  ],
+  "source_result": "optimization_010_six_segments_Bminus4/reversed_inner/best.json",
+  "reusable_emittance_pm_4ip": 0.7661737438338414,
+  "baseline_emittance_pm_4ip": 0.8044910155408713,
+  "reduction_percent": 4.762768952664365,
+  "status": "Best found in three parallel searches. Stopped after the best search showed no improvement over more than 50 trials; other starts found no lower value. Fresh full radiation run validated."
+}

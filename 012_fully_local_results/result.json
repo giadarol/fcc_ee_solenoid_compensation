@@ -1,0 +1,98 @@
+{
+  "parameters": {
+    "theta": -0.015,
+    "B0": 3,
+    "r0": 0.13,
+    "r0_local": 0.1499,
+    "l_local": 0.6,
+    "sol_half_length": 1.25,
+    "first_corr_segments": [
+      {
+        "s_range": [
+          1.53,
+          1.58
+        ],
+        "weight": 0.0
+      },
+      {
+        "s_range": [
+          1.58,
+          1.63
+        ],
+        "weight": 0.0
+      },
+      {
+        "s_range": [
+          1.63,
+          1.68
+        ],
+        "weight": 0.0
+      },
+      {
+        "s_range": [
+          1.68,
+          1.73
+        ],
+        "weight": 0.0
+      },
+      {
+        "s_range": [
+          1.78,
+          1.965
+        ],
+        "weight": 0.0
+      },
+      {
+        "s_range": [
+          2.015,
+          2.2
+        ],
+        "weight": 0.0
+      }
+    ],
+    "B0_local": -6.295300262452548
+  },
+  "interval_m": [
+    -2.399,
+    2.399
+  ],
+  "main_integral_Tm": 7.484734674813074,
+  "local_pair_integral_per_T_m": 1.1889400604852391,
+  "local_pair_integral_Tm": -7.484734674813074,
+  "grid_residual_integral_Tm": 3.3306690738754696e-16,
+  "analytic_unclipped_residual_integral_Tm": -0.0016227711724932092,
+  "analytic_unclipped_canceling_B0_local_T": -6.293935710059141,
+  "weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "convention": "Integrated Bs of the tracking model, including its zeroed endpoints.",
+  "emittance_pm_4ip": 23.580633347115146,
+  "tracking_integral_Tm": 1.5303394157320048e-15,
+  "remote_compensation_field_T": 0.0,
+  "doublet_rotation_rad": 2.515264336871645e-18,
+  "main_endpoint_Bs_T": [
+    0.0,
+    0.0
+  ],
+  "matching_checks": {
+    "ipa": {
+      "orbit": true,
+      "optics": true
+    }
+  },
+  "radiation_analysis_completed": true,
+  "first_corrector_knobs": {
+    "right": 0.0,
+    "left": 0.0
+  },
+  "max_abs_y_m": 0.00040089211093283944,
+  "max_abs_dy_m": 0.020000871800776532,
+  "status": "PASS",
+  "endpoint_assignment": "Explicit ks_profile[1] = 0 keeps the exit field zero when knobs are toggled.",
+  "remaining_corrections": "Standard orbit and optics correctors are rematched; remote compensation solenoids are off."
+}

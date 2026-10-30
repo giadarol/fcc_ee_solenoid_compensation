@@ -1,0 +1,19 @@
+{
+  "case_id": "optimization_010_weights",
+  "rerun_emittance_pm_4ip": 1.0425296902727212,
+  "difference_pm": 1.3707751312042049e-05,
+  "relative_difference": 1.3148720539479797e-05,
+  "matching_checks": {
+    "ipa": {
+      "orbit": true,
+      "optics": true
+    }
+  },
+  "radiation_analysis_completed": true,
+  "matched_knobs": {
+    "right": -7.153041150682433e-05,
+    "left": -7.177928125002914e-05
+  },
+  "status": "PASS",
+  "seconds": 48.15425395965576
+}

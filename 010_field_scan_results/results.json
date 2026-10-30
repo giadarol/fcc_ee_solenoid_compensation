@@ -1,0 +1,865 @@
+{
+  "cases": [
+    {
+      "case_id": "optimization_010_six_segments_Bminus5",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -5.0,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": -2.266755193713201
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": -1.8546426085383465
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": -1.406614451538898
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": -0.5513473258534886
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 11.237975783806876
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 2.1544274400097434,
+      "saved_status": "Best found in four searches, including an equivalent fifth-segment normalization mapped to last-normalized weights. Stopped after numerical stabilization of the leading search; other starts found no lower value. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus5/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus5/pivot/010_source.py",
+      "source_sha256": "7075a6fea20c46267d8f513be61e4538e05841f7e35f5d03d54da62780402956"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus4p5",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -4.5,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": -0.771396091720121
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": -0.6335793169257153
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": -0.4399575166418126
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": -0.12619372348111269
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 4.292809657687809
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 1.3055096860112696,
+      "saved_status": "Best found in three parallel searches. Stopped after leading-search improvement below 1e-6 pm over 20 trials and agreement of a second start within 1e-5 pm. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus4p5/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus4p5/front_loaded/010_source.py",
+      "source_sha256": "e8d8af8a9a5826c7ee1b03c9978d62531f7724aeef04809dd3d4ed7075f437aa"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus4",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -4.0,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": -0.4447022669048761
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": -0.3534301615560382
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": -0.22304279559440035
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.0005219200541165554
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 3.1989783169247077
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.7661749672257164,
+      "saved_status": "Best found in three parallel searches. Stopped after the best search showed no improvement over more than 50 trials; other starts found no lower value. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus4/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus4/reversed_inner/010_source.py",
+      "source_sha256": "c7b2dda269ed4eca5db706f4612147e442513ca05152a3e2d4c245c25d531d24"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus3p5",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -3.5,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": -0.22720243251890815
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": -0.14833060101166518
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": -0.04469318434270825
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.11665203150645945
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 2.9407178571774506
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.44295431305205757,
+      "saved_status": "Best found in three parallel searches agreeing within 5e-6 pm; remaining searches stopped after improvement below 4e-6 pm over 20 trials. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus3p5/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus3p5/front_loaded/010_source.py",
+      "source_sha256": "8d47c42758e1c1c08075c60b5d219af3bf76180fd222677bb3843df0f3ac37d2"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus3",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -3.0,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": -0.06550494636613342
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": -0.007834086649619116
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.07162994341177974
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.20106142842017813
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 2.6958936723130886
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.2745948802250479,
+      "saved_status": "Selected fresh-validated minimum from a successfully converged BFGS search. Its reusable result agrees within 3e-8 pm with the best of three parallel searches; remaining searches stopped after numerical stabilization.",
+      "selected_file": "optimization_010_six_segments_Bminus3/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus3/front_loaded/010_source.py",
+      "source_sha256": "7696111d21ec49fdf8efc004b6f313d70b3a15720287559a90eafb84b7fd2192"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus2p5",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -2.5,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.09490986203830125
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.12312643703437282
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.17268036196465997
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.263448059275075
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 2.4251717413161735
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.22267714033594535,
+      "saved_status": "Best found in three parallel searches agreeing within 1e-6 pm; stopped after improvement below 2e-7 pm over 20 trials. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus2p5/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus2p5/current/010_source.py",
+      "source_sha256": "454f8aba7cc402cabc0f3e37735626b432f75ee2fe88124c4045437fc6f12fde"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus2",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -2.0,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.2648294952640936
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.250815344329937
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.2651494981081337
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.3180567693449662
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 2.1738018106168324
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.2595821097879052,
+      "saved_status": "Best found in three parallel searches agreeing within 4e-7 pm; stopped after no improvement over 20 trials. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus2/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus2/front_loaded/010_source.py",
+      "source_sha256": "5de9841c74e3b8365f722a8967666a5ce968b38257944d6b2ffdbd506c588133"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus1p5",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -1.5,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.45887438327130453
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.379554672943366
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.35296353599233465
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.3676657379535109
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 1.9523627220140019
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.36155315325234794,
+      "saved_status": "Best found in three parallel searches agreeing within 2e-6 pm; stopped after improvement below 5e-7 pm over 20 trials. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus1p5/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus1p5/front_loaded/010_source.py",
+      "source_sha256": "8083200a983ac2402d5a9707ff6682063289558721b8f64be29982692f8c94a5"
+    },
+    {
+      "case_id": "optimization_010_six_segments_Bminus1",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": -1.0,
+        "r0_local": 0.1499,
+        "l_local": 0.6
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.6973220955960715
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.5102618570288843
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.4360161127360068
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.41433217591465143
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 1.7513371578458508
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.5064438874987158,
+      "saved_status": "Best found in three parallel searches agreeing within 1e-6 pm. BFGS ended at numerical precision limit; other searches stopped after 20 trials without improvement. Fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments_Bminus1/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments_Bminus1/rising/010_source.py",
+      "source_sha256": "c1a7599207a8cffba4479df416409645c6c6050dcf2533abf87664d127f5350c"
+    },
+    {
+      "case_id": "optimization_010_six_segments",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": 0.0,
+        "r0_local": 0.1499,
+        "l_local": 0.5884884906480151
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 1.3470908345658443
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.7782585376415466
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.5955636683111123
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.49977429496440834
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 1.3571773681747605
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 0.8581492253324748,
+      "saved_status": "Best found in three parallel searches; stopped after numerical stabilization; fresh full radiation run validated.",
+      "selected_file": "optimization_010_six_segments/selected_best.json",
+      "source_snapshot": "optimization_010_six_segments/rising/010_source.py",
+      "source_sha256": "52acd56f3075950790c6e092a8e862f44cdb7c3e62843d741e8325013e360325"
+    },
+    {
+      "case_id": "optimization_010_weights",
+      "parameters": {
+        "B0": 3,
+        "r0": 0.13,
+        "theta": -0.015,
+        "sol_half_length": 1.25,
+        "B0_local": 0.0,
+        "r0_local": 0.1499,
+        "l_local": 0.5884884906480151
+      },
+      "segments": [
+        {
+          "s_range": [
+            1.53,
+            1.73
+          ],
+          "weight": 2.807412218026002
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 1.3814647593389964
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "saved_emittance_pm_4ip": 1.0425159825214092,
+      "saved_status": "Stopped at user request; matching tolerances passed; fresh final validation not run.",
+      "selected_file": "optimization_010_weights/selected_best.json",
+      "source_snapshot": "optimization_010_weights/equal/010_source.py",
+      "source_sha256": "e750440962635edd511a6540b0e0eb15b862b35fa44a5100ada670fa44445ab7"
+    }
+  ],
+  "reruns": {
+    "optimization_010_six_segments_Bminus3p5": {
+      "case_id": "optimization_010_six_segments_Bminus3p5",
+      "rerun_emittance_pm_4ip": 0.44295431305205757,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -4.932592092427821e-05,
+        "left": -4.956676027987881e-05
+      },
+      "status": "PASS",
+      "seconds": 42.713383197784424
+    },
+    "optimization_010_six_segments_Bminus4": {
+      "case_id": "optimization_010_six_segments_Bminus4",
+      "rerun_emittance_pm_4ip": 0.7661749672257164,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -4.809926170403152e-05,
+        "left": -4.8356607615862257e-05
+      },
+      "status": "PASS",
+      "seconds": 43.197875022888184
+    },
+    "optimization_010_six_segments_Bminus4p5": {
+      "case_id": "optimization_010_six_segments_Bminus4p5",
+      "rerun_emittance_pm_4ip": 1.3055096860112696,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -3.7174301178270935e-05,
+        "left": -3.739262640415029e-05
+      },
+      "status": "PASS",
+      "seconds": 43.209453105926514
+    },
+    "optimization_010_six_segments_Bminus5": {
+      "case_id": "optimization_010_six_segments_Bminus5",
+      "rerun_emittance_pm_4ip": 2.1544274400097434,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -1.4839098082563511e-05,
+        "left": -1.493615035465421e-05
+      },
+      "status": "PASS",
+      "seconds": 43.63475799560547
+    },
+    "optimization_010_six_segments_Bminus2": {
+      "case_id": "optimization_010_six_segments_Bminus2",
+      "rerun_emittance_pm_4ip": 0.2595821097879052,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -6.15554160484621e-05,
+        "left": -6.181705150852091e-05
+      },
+      "status": "PASS",
+      "seconds": 42.27557826042175
+    },
+    "optimization_010_six_segments_Bminus2p5": {
+      "case_id": "optimization_010_six_segments_Bminus2p5",
+      "rerun_emittance_pm_4ip": 0.22267714033594535,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -5.775437044397522e-05,
+        "left": -5.801031817573884e-05
+      },
+      "status": "PASS",
+      "seconds": 42.414350748062134
+    },
+    "optimization_010_six_segments_Bminus3": {
+      "case_id": "optimization_010_six_segments_Bminus3",
+      "rerun_emittance_pm_4ip": 0.2745948802250479,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -5.3301438858154356e-05,
+        "left": -5.3548158931809895e-05
+      },
+      "status": "PASS",
+      "seconds": 42.800121784210205
+    },
+    "optimization_010_six_segments_Bminus1p5": {
+      "case_id": "optimization_010_six_segments_Bminus1p5",
+      "rerun_emittance_pm_4ip": 0.36155315325234794,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -6.422909160797732e-05,
+        "left": -6.448811355064395e-05
+      },
+      "status": "PASS",
+      "seconds": 43.037615060806274
+    },
+    "optimization_010_weights": {
+      "case_id": "optimization_010_weights",
+      "rerun_emittance_pm_4ip": 1.0425296902727212,
+      "difference_pm": 1.3707751312042049e-05,
+      "relative_difference": 1.3148720539479797e-05,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -7.153041150682433e-05,
+        "left": -7.177928125002914e-05
+      },
+      "status": "PASS",
+      "seconds": 48.15425395965576
+    },
+    "optimization_010_six_segments_Bminus1": {
+      "case_id": "optimization_010_six_segments_Bminus1",
+      "rerun_emittance_pm_4ip": 0.5064438874987158,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -6.567690918248859e-05,
+        "left": -6.592224042000153e-05
+      },
+      "status": "PASS",
+      "seconds": 48.40482187271118
+    },
+    "optimization_010_six_segments": {
+      "case_id": "optimization_010_six_segments",
+      "rerun_emittance_pm_4ip": 0.8581492253324748,
+      "difference_pm": 0.0,
+      "relative_difference": 0.0,
+      "matching_checks": {
+        "ipa": {
+          "orbit": true,
+          "optics": true
+        }
+      },
+      "radiation_analysis_completed": true,
+      "matched_knobs": {
+        "right": -6.5646788615949e-05,
+        "left": -6.58690217518267e-05
+      },
+      "status": "PASS",
+      "seconds": 49.33037304878235
+    }
+  }
+}

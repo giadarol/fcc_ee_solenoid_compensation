@@ -1,0 +1,179 @@
+SOLENOID COMPENSATION: SAVED OPTIMA AND FRESH RERUNS
+==================================================
+Emittance [pm] = 4 * twiss4d.rad_int_eq_gemitt_y * 1e12 (four-IP convention).
+Each rerun repeats orbit/optics matching and full radiation analysis at
+the saved weights; it does not perform another weight optimization.
+The plotted quantity is the 4D radiation-integral estimate, not the 6D emittance.
+PASS requires matching tolerances, completed radiation analysis, and
+agreement with the saved emittance within relative tolerance 2e-5.
+The earlier three-segment result is listed separately from the six-segment scan.
+The zero-field runs retain l_local = 0.5884884906480151 m from their snapshots;
+all nonzero-field runs use l_local = 0.6 m. Length has no field effect at B0_local = 0.
+
+Segments  B0_local[T]   Saved ey[pm]     Rerun ey[pm]      Difference[pm]  Status
+       6         -5.0     2.1544274400     2.1544274400                0 PASS
+       6         -4.5     1.3055096860     1.3055096860                0 PASS
+       6         -4.0     0.7661749672     0.7661749672                0 PASS
+       6         -3.5     0.4429543131     0.4429543131                0 PASS
+       6         -3.0     0.2745948802     0.2745948802                0 PASS
+       6         -2.5     0.2226771403     0.2226771403                0 PASS
+       6         -2.0     0.2595821098     0.2595821098                0 PASS
+       6         -1.5     0.3615531533     0.3615531533                0 PASS
+       6         -1.0     0.5064438875     0.5064438875                0 PASS
+       6          0.0     0.8581492253     0.8581492253                0 PASS
+       3          0.0     1.0425159825     1.0425296903      1.37078e-05 PASS
+
+FULL PARAMETERS AND WEIGHTS (in increasing positive s from the IP)
+Left-hand ranges are mirrored; each side has its own matched acbv1 knob.
+Weights multiply integrated k0sl. Last-segment weight is normalized to 1.
+
+optimization_010_six_segments_Bminus5
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -5.0, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = -2.2667551937132009
+  Segment 2: (1.58, 1.63) m; weight = -1.8546426085383465
+  Segment 3: (1.63, 1.68) m; weight = -1.4066144515388981
+  Segment 4: (1.68, 1.73) m; weight = -0.55134732585348856
+  Segment 5: (1.78, 1.965) m; weight = 11.237975783806876
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus5/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus5/pivot/010_source.py
+  Snapshot SHA256: 7075a6fea20c46267d8f513be61e4538e05841f7e35f5d03d54da62780402956
+  Original status: Best found in four searches, including an equivalent fifth-segment normalization mapped to last-normalized weights. Stopped after numerical stabilization of the leading search; other starts found no lower value. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus5", "difference_pm": 0.0, "matched_knobs": {"left": -1.493615035465421e-05, "right": -1.4839098082563511e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 2.1544274400097434, "seconds": 43.63475799560547, "status": "PASS"}
+
+optimization_010_six_segments_Bminus4p5
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -4.5, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = -0.77139609172012102
+  Segment 2: (1.58, 1.63) m; weight = -0.63357931692571534
+  Segment 3: (1.63, 1.68) m; weight = -0.4399575166418126
+  Segment 4: (1.68, 1.73) m; weight = -0.12619372348111269
+  Segment 5: (1.78, 1.965) m; weight = 4.2928096576878092
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus4p5/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus4p5/front_loaded/010_source.py
+  Snapshot SHA256: e8d8af8a9a5826c7ee1b03c9978d62531f7724aeef04809dd3d4ed7075f437aa
+  Original status: Best found in three parallel searches. Stopped after leading-search improvement below 1e-6 pm over 20 trials and agreement of a second start within 1e-5 pm. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus4p5", "difference_pm": 0.0, "matched_knobs": {"left": -3.739262640415029e-05, "right": -3.7174301178270935e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 1.3055096860112696, "seconds": 43.209453105926514, "status": "PASS"}
+
+optimization_010_six_segments_Bminus4
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -4.0, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = -0.44470226690487608
+  Segment 2: (1.58, 1.63) m; weight = -0.35343016155603818
+  Segment 3: (1.63, 1.68) m; weight = -0.22304279559440035
+  Segment 4: (1.68, 1.73) m; weight = 0.00052192005411655536
+  Segment 5: (1.78, 1.965) m; weight = 3.1989783169247077
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus4/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus4/reversed_inner/010_source.py
+  Snapshot SHA256: c7b2dda269ed4eca5db706f4612147e442513ca05152a3e2d4c245c25d531d24
+  Original status: Best found in three parallel searches. Stopped after the best search showed no improvement over more than 50 trials; other starts found no lower value. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus4", "difference_pm": 0.0, "matched_knobs": {"left": -4.8356607615862257e-05, "right": -4.809926170403152e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.7661749672257164, "seconds": 43.197875022888184, "status": "PASS"}
+
+optimization_010_six_segments_Bminus3p5
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -3.5, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = -0.22720243251890815
+  Segment 2: (1.58, 1.63) m; weight = -0.14833060101166518
+  Segment 3: (1.63, 1.68) m; weight = -0.044693184342708248
+  Segment 4: (1.68, 1.73) m; weight = 0.11665203150645945
+  Segment 5: (1.78, 1.965) m; weight = 2.9407178571774506
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus3p5/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus3p5/front_loaded/010_source.py
+  Snapshot SHA256: 8d47c42758e1c1c08075c60b5d219af3bf76180fd222677bb3843df0f3ac37d2
+  Original status: Best found in three parallel searches agreeing within 5e-6 pm; remaining searches stopped after improvement below 4e-6 pm over 20 trials. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus3p5", "difference_pm": 0.0, "matched_knobs": {"left": -4.956676027987881e-05, "right": -4.932592092427821e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.44295431305205757, "seconds": 42.713383197784424, "status": "PASS"}
+
+optimization_010_six_segments_Bminus3
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -3.0, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = -0.065504946366133424
+  Segment 2: (1.58, 1.63) m; weight = -0.007834086649619116
+  Segment 3: (1.63, 1.68) m; weight = 0.071629943411779737
+  Segment 4: (1.68, 1.73) m; weight = 0.20106142842017813
+  Segment 5: (1.78, 1.965) m; weight = 2.6958936723130886
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus3/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus3/front_loaded/010_source.py
+  Snapshot SHA256: 7696111d21ec49fdf8efc004b6f313d70b3a15720287559a90eafb84b7fd2192
+  Original status: Selected fresh-validated minimum from a successfully converged BFGS search. Its reusable result agrees within 3e-8 pm with the best of three parallel searches; remaining searches stopped after numerical stabilization.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus3", "difference_pm": 0.0, "matched_knobs": {"left": -5.3548158931809895e-05, "right": -5.3301438858154356e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.2745948802250479, "seconds": 42.800121784210205, "status": "PASS"}
+
+optimization_010_six_segments_Bminus2p5
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -2.5, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = 0.094909862038301249
+  Segment 2: (1.58, 1.63) m; weight = 0.12312643703437282
+  Segment 3: (1.63, 1.68) m; weight = 0.17268036196465997
+  Segment 4: (1.68, 1.73) m; weight = 0.26344805927507498
+  Segment 5: (1.78, 1.965) m; weight = 2.4251717413161735
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus2p5/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus2p5/current/010_source.py
+  Snapshot SHA256: 454f8aba7cc402cabc0f3e37735626b432f75ee2fe88124c4045437fc6f12fde
+  Original status: Best found in three parallel searches agreeing within 1e-6 pm; stopped after improvement below 2e-7 pm over 20 trials. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus2p5", "difference_pm": 0.0, "matched_knobs": {"left": -5.801031817573884e-05, "right": -5.775437044397522e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.22267714033594535, "seconds": 42.414350748062134, "status": "PASS"}
+
+optimization_010_six_segments_Bminus2
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -2.0, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = 0.26482949526409361
+  Segment 2: (1.58, 1.63) m; weight = 0.25081534432993702
+  Segment 3: (1.63, 1.68) m; weight = 0.26514949810813371
+  Segment 4: (1.68, 1.73) m; weight = 0.31805676934496618
+  Segment 5: (1.78, 1.965) m; weight = 2.1738018106168324
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus2/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus2/front_loaded/010_source.py
+  Snapshot SHA256: 5de9841c74e3b8365f722a8967666a5ce968b38257944d6b2ffdbd506c588133
+  Original status: Best found in three parallel searches agreeing within 4e-7 pm; stopped after no improvement over 20 trials. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus2", "difference_pm": 0.0, "matched_knobs": {"left": -6.181705150852091e-05, "right": -6.15554160484621e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.2595821097879052, "seconds": 42.27557826042175, "status": "PASS"}
+
+optimization_010_six_segments_Bminus1p5
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -1.5, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = 0.45887438327130453
+  Segment 2: (1.58, 1.63) m; weight = 0.37955467294336598
+  Segment 3: (1.63, 1.68) m; weight = 0.35296353599233465
+  Segment 4: (1.68, 1.73) m; weight = 0.36766573795351087
+  Segment 5: (1.78, 1.965) m; weight = 1.9523627220140019
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus1p5/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus1p5/front_loaded/010_source.py
+  Snapshot SHA256: 8083200a983ac2402d5a9707ff6682063289558721b8f64be29982692f8c94a5
+  Original status: Best found in three parallel searches agreeing within 2e-6 pm; stopped after improvement below 5e-7 pm over 20 trials. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus1p5", "difference_pm": 0.0, "matched_knobs": {"left": -6.448811355064395e-05, "right": -6.422909160797732e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.36155315325234794, "seconds": 43.037615060806274, "status": "PASS"}
+
+optimization_010_six_segments_Bminus1
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': -1.0, 'r0_local': 0.1499, 'l_local': 0.6}
+  Segment 1: (1.53, 1.58) m; weight = 0.6973220955960715
+  Segment 2: (1.58, 1.63) m; weight = 0.51026185702888427
+  Segment 3: (1.63, 1.68) m; weight = 0.43601611273600682
+  Segment 4: (1.68, 1.73) m; weight = 0.41433217591465143
+  Segment 5: (1.78, 1.965) m; weight = 1.7513371578458508
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments_Bminus1/selected_best.json
+  Source snapshot: optimization_010_six_segments_Bminus1/rising/010_source.py
+  Snapshot SHA256: c1a7599207a8cffba4479df416409645c6c6050dcf2533abf87664d127f5350c
+  Original status: Best found in three parallel searches agreeing within 1e-6 pm. BFGS ended at numerical precision limit; other searches stopped after 20 trials without improvement. Fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments_Bminus1", "difference_pm": 0.0, "matched_knobs": {"left": -6.592224042000153e-05, "right": -6.567690918248859e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.5064438874987158, "seconds": 48.40482187271118, "status": "PASS"}
+
+optimization_010_six_segments
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': 0.0, 'r0_local': 0.1499, 'l_local': 0.5884884906480151}
+  Segment 1: (1.53, 1.58) m; weight = 1.3470908345658443
+  Segment 2: (1.58, 1.63) m; weight = 0.77825853764154662
+  Segment 3: (1.63, 1.68) m; weight = 0.59556366831111229
+  Segment 4: (1.68, 1.73) m; weight = 0.49977429496440834
+  Segment 5: (1.78, 1.965) m; weight = 1.3571773681747605
+  Segment 6: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_six_segments/selected_best.json
+  Source snapshot: optimization_010_six_segments/rising/010_source.py
+  Snapshot SHA256: 52acd56f3075950790c6e092a8e862f44cdb7c3e62843d741e8325013e360325
+  Original status: Best found in three parallel searches; stopped after numerical stabilization; fresh full radiation run validated.
+  Rerun: {"case_id": "optimization_010_six_segments", "difference_pm": 0.0, "matched_knobs": {"left": -6.58690217518267e-05, "right": -6.5646788615949e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 0.0, "rerun_emittance_pm_4ip": 0.8581492253324748, "seconds": 49.33037304878235, "status": "PASS"}
+
+optimization_010_weights
+  Parameters: {'B0': 3, 'r0': 0.13, 'theta': -0.015, 'sol_half_length': 1.25, 'B0_local': 0.0, 'r0_local': 0.1499, 'l_local': 0.5884884906480151}
+  Segment 1: (1.53, 1.73) m; weight = 2.8074122180260019
+  Segment 2: (1.78, 1.965) m; weight = 1.3814647593389964
+  Segment 3: (2.015, 2.2) m; weight = 1
+  Selected result: optimization_010_weights/selected_best.json
+  Source snapshot: optimization_010_weights/equal/010_source.py
+  Snapshot SHA256: e750440962635edd511a6540b0e0eb15b862b35fa44a5100ada670fa44445ab7
+  Original status: Stopped at user request; matching tolerances passed; fresh final validation not run.
+  Rerun: {"case_id": "optimization_010_weights", "difference_pm": 1.3707751312042049e-05, "matched_knobs": {"left": -7.177928125002914e-05, "right": -7.153041150682433e-05}, "matching_checks": {"ipa": {"optics": true, "orbit": true}}, "radiation_analysis_completed": true, "relative_difference": 1.3148720539479797e-05, "rerun_emittance_pm_4ip": 1.0425296902727212, "seconds": 48.15425395965576, "status": "PASS"}

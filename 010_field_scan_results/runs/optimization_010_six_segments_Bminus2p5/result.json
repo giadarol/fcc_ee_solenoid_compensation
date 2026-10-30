@@ -1,0 +1,19 @@
+{
+  "case_id": "optimization_010_six_segments_Bminus2p5",
+  "rerun_emittance_pm_4ip": 0.22267714033594535,
+  "difference_pm": 0.0,
+  "relative_difference": 0.0,
+  "matching_checks": {
+    "ipa": {
+      "orbit": true,
+      "optics": true
+    }
+  },
+  "radiation_analysis_completed": true,
+  "matched_knobs": {
+    "right": -5.775437044397522e-05,
+    "left": -5.801031817573884e-05
+  },
+  "status": "PASS",
+  "seconds": 42.414350748062134
+}

@@ -1,0 +1,67 @@
+{
+  "weights": [
+    0.09490986203830125,
+    0.12312643703437282,
+    0.17268036196465997,
+    0.263448059275075,
+    2.4251717413161735,
+    1.0
+  ],
+  "emittance_pm_4ip": 0.22267714033594535,
+  "B0_local": -2.5,
+  "r0_local": 0.1499,
+  "l_local": 0.6,
+  "matched_knobs": {
+    "right": -5.775437044397522e-05,
+    "left": -5.801031817573884e-05
+  },
+  "segments": [
+    {
+      "s_range": [
+        1.53,
+        1.58
+      ],
+      "weight": 0.09490986203830125
+    },
+    {
+      "s_range": [
+        1.58,
+        1.63
+      ],
+      "weight": 0.12312643703437282
+    },
+    {
+      "s_range": [
+        1.63,
+        1.68
+      ],
+      "weight": 0.17268036196465997
+    },
+    {
+      "s_range": [
+        1.68,
+        1.73
+      ],
+      "weight": 0.263448059275075
+    },
+    {
+      "s_range": [
+        1.78,
+        1.965
+      ],
+      "weight": 2.4251717413161735
+    },
+    {
+      "s_range": [
+        2.015,
+        2.2
+      ],
+      "weight": 1.0
+    }
+  ],
+  "source_result": "optimization_010_six_segments_Bminus2p5/current/best.json",
+  "reusable_emittance_pm_4ip": 0.22267696428614908,
+  "baseline_emittance_pm_4ip": 0.2564923109443446,
+  "reduction_percent": 13.183697586839827,
+  "status": "Best found in three parallel searches agreeing within 1e-6 pm; stopped after improvement below 2e-7 pm over 20 trials. Fresh full radiation run validated."
+}

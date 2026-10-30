@@ -1,0 +1,67 @@
+{
+  "weights": [
+    -0.771396091720121,
+    -0.6335793169257153,
+    -0.4399575166418126,
+    -0.12619372348111269,
+    4.292809657687809,
+    1.0
+  ],
+  "emittance_pm_4ip": 1.3055096860112696,
+  "B0_local": -4.5,
+  "r0_local": 0.1499,
+  "l_local": 0.6,
+  "matched_knobs": {
+    "right": -3.7174301178270935e-05,
+    "left": -3.739262640415029e-05
+  },
+  "segments": [
+    {
+      "s_range": [
+        1.53,
+        1.58
+      ],
+      "weight": -0.771396091720121
+    },
+    {
+      "s_range": [
+        1.58,
+        1.63
+      ],
+      "weight": -0.6335793169257153
+    },
+    {
+      "s_range": [
+        1.63,
+        1.68
+      ],
+      "weight": -0.4399575166418126
+    },
+    {
+      "s_range": [
+        1.68,
+        1.73
+      ],
+      "weight": -0.12619372348111269
+    },
+    {
+      "s_range": [
+        1.78,
+        1.965
+      ],
+      "weight": 4.292809657687809
+    },
+    {
+      "s_range": [
+        2.015,
+        2.2
+      ],
+      "weight": 1.0
+    }
+  ],
+  "source_result": "optimization_010_six_segments_Bminus4p5/front_loaded/best.json",
+  "reusable_emittance_pm_4ip": 1.305509666965441,
+  "baseline_emittance_pm_4ip": 1.3712350895332104,
+  "reduction_percent": 4.793153560875895,
+  "status": "Best found in three parallel searches. Stopped after leading-search improvement below 1e-6 pm over 20 trials and agreement of a second start within 1e-5 pm. Fresh full radiation run validated."
+}
