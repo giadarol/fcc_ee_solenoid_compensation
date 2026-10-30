@@ -25,6 +25,10 @@ theta = -0.015
 B0 = 3 # T
 r0 = 0.13
 
+B0_local = -1.0                       # T
+r0_local = 0.1499                     # m
+l_local = 0.5884884906480151           # m
+
 sol_half_length = 1.25                # m; screening coils also start here
 
 # First corrector segments: positive distances from the IP [m], mirrored
@@ -58,9 +62,7 @@ for segment in first_corr_segments:
 vary_first_corr = any(segment.get('weight', 0) != 0
                       for segment in first_corr_segments)
 
-B0_local = -1.0                       # T
-r0_local = 0.1499                     # m
-l_local = 0.5884884906480151           # m
+
 
 for ip_name in ip_names:
 
