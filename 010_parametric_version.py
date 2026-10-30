@@ -25,7 +25,7 @@ theta = -0.015
 B0 = 3 # T
 r0 = 0.13
 
-B0_local = -1.0                       # T
+B0_local = -0                      # T
 r0_local = 0.1499                     # m
 l_local = 0.5884884906480151           # m
 
@@ -36,11 +36,14 @@ sol_half_length = 1.25                # m; screening coils also start here
 #   strength: absolute integrated k0sl (same convention as ksl[0]);
 #   weight:   integrated k0sl = weight * acbv1_sol_{side}_{ip_name}.
 # Weights are used as given, without normalization. Each side has its own
-# optimization knob. The first segment is fixed; the other two share the knob.
+# optimization knob. All segments share the knob with relative weights.
 first_corr_segments = [
-    {'s_range': (1.53, 1.73), 'strength': -2e-4},
-    {'s_range': (1.78, 1.965), 'weight': 0.5},
-    {'s_range': (2.015, 2.20), 'weight': 0.5},
+    {'s_range': (1.53, 1.58), 'weight': 1.3470908345658443},
+    {'s_range': (1.58, 1.63), 'weight': 0.7782585376415466},
+    {'s_range': (1.63, 1.68), 'weight': 0.5955636683111123},
+    {'s_range': (1.68, 1.73), 'weight': 0.49977429496440834},
+    {'s_range': (1.78, 1.965), 'weight': 1.3571773681747605},
+    {'s_range': (2.015, 2.2), 'weight': 1.0},
 ]
 
 if not first_corr_segments:
