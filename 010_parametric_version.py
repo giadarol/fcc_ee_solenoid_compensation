@@ -22,7 +22,7 @@ ip_names = ['ipa']
 # Tilt with respect to the beam axis
 theta = -0.015
 
-B0 = 2. # T
+B0 = 3. # T
 r0 = 0.13
 
 B0_local = -2.5 * B0 / 3. # T
@@ -65,7 +65,8 @@ for segment in first_corr_segments:
 vary_first_corr = any(segment.get('weight', 0) != 0
                       for segment in first_corr_segments)
 
-
+# Keep the solenoid-only transverse field before adding the correctors.
+solenoid_bx_by_element = {}
 
 for ip_name in ip_names:
 
@@ -129,6 +130,8 @@ for ip_name in ip_names:
             ksl=[0.5 * (k0s_exit + k0s_entry) * length * env.ref[f'on_sol_{ip_name}']],
         )
         ele_names.append(f'sol_slice_{ii}_{ip_name}')
+        solenoid_bx_by_element[ele_names[-1]] = (
+            0.5 * (bx[ii] + bx[ii+1]), ip_name)
 
     # Force solenoid field at edges to be zero (ax, ay zero at entry and exit)
     env[ele_names[0]].ks_profile[0] = 0
@@ -610,15 +613,62 @@ if plot:
 
     ax1.set_xlim(-20, 20)
 
-    # fname in suptitle (small font)
-    plt.suptitle(fout, fontsize=8)
+    field_title = rf'$B_0 = {B0:g}$ T'
+    fig1.suptitle(field_title)
+    fig2.suptitle(field_title)
+
+    # Separate the solenoid field (main + local coils) from the correctors.
+    # The solenoid slices are unchanged by the later cuts outside +/-2.4 m.
+    bx_solenoid = np.zeros(len(tw4d.s))
+    for name, (field, solenoid_ip) in solenoid_bx_by_element.items():
+        bx_solenoid[tw4d.name == name] = field * env[f'on_sol_{solenoid_ip}']
+    bx_total = np.divide(tw4d.k0sl * rigidity0, tw4d.length,
+                         out=np.full(len(tw4d.s), np.nan), where=tw4d.length > 0)
+    bx_correctors = bx_total - bx_solenoid
+    bx_solenoid[tw4d.length <= 0] = np.nan
+
+    fig_fields = plt.figure(figsize=fig2.get_size_inches())
+    field_axes = [fig_fields.add_subplot(3, 1, ii, sharex=ax1)
+                  for ii in range(1, 4)]
+    for ax, values, label in zip(field_axes,
+            [tw4d.bs, bx_correctors, bx_solenoid],
+            [r'$B_s$ [T]', r'$B_x$ correctors [T]', r'$B_x$ solenoid [T]']):
+        ax.plot(tw4d.s, values)
+        ax.set_ylabel(label)
+        ax.grid(True)
+    field_axes[-1].lines[0].set_label('Solenoid')
+    field_axes[-1].plot(tw4d.s, bx_total, '--', label='Net (solenoid + correctors)')
+    field_axes[-1].set_ylabel(r'$B_x$ [T]')
+    field_axes[-1].legend()
+    field_axes[-1].set_xlabel('s [m]')
+    fig_fields.subplots_adjust(bottom=0.08, hspace=0.3)
+    fig_fields.suptitle(field_title)
+
+    fig_optics = plt.figure(figsize=fig2.get_size_inches())
+    optics_axes = [fig_optics.add_subplot(3, 1, ii, sharex=ax1)
+                   for ii in range(1, 4)]
+    tw4d.plot(ax=optics_axes[0])
+    optics_axes[0].set_xlabel('')
+    optics_axes[1].plot(tw4d.s, tw4d.x * 1e3, label='x')
+    optics_axes[1].plot(tw4d.s, tw4d.y * 1e3, label='y')
+    optics_axes[1].set_ylabel('Orbit [mm]')
+    optics_axes[1].legend()
+    optics_axes[2].plot(tw4d.s, tw4d.betx2, label=r'$\beta_{x2}$')
+    optics_axes[2].plot(tw4d.s, tw4d.bety1, label=r'$\beta_{y1}$')
+    optics_axes[2].set_ylabel(r'$\beta_{x2},\ \beta_{y1}$ [m]')
+    optics_axes[2].legend()
+    optics_axes[2].set_xlabel('s [m]')
+    for ax in optics_axes:
+        ax.grid(True)
+    fig_optics.subplots_adjust(bottom=0.08, hspace=0.3)
+    fig_optics.suptitle(field_title)
 
     if radiation_analysis:
         plt.figure()
         plt.plot(tw_rad.s, dE_ds_eV_per_m*1e-9)
         plt.xlabel('s [m]')
         plt.ylabel(r'$dE/ds$ [GeV/m]')
-        plt.title('Radiation Energy Loss per Unit Length')
+        plt.title(f'Radiation Energy Loss per Unit Length — {field_title}')
         plt.grid(True)
 
 out_path = 'results/' + fout + '.json'
