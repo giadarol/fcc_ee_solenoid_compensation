@@ -22,12 +22,12 @@ ip_names = ['ipa']
 # Tilt with respect to the beam axis
 theta = -0.015
 
-B0 = 3. # T
+B0 = 2 # T
 r0 = 0.13
 
-B0_local = -2.5 * B0 / 3. # T
+B0_local = 0.0 # T
 r0_local = 0.1499 # m
-l_local = 0.6 # m
+l_local = 0.5884884906480151 # m
 
 sol_half_length = 1.25 # m; screening coils also start here
 
@@ -38,11 +38,11 @@ sol_half_length = 1.25 # m; screening coils also start here
 # Weights are used as given, without normalization. Each side has its own
 # optimization knob. All segments share the knob with relative weights.
 first_corr_segments = [
-    {'s_range': (1.53, 1.58), 'strength': -5.481459330946632e-06},
-    {'s_range': (1.58, 1.63), 'strength': -7.111089855929957e-06},
-    {'s_range': (1.63, 1.68), 'strength': -9.973045593306700e-06},
-    {'s_range': (1.68, 1.73), 'strength': -1.5215276808119023e-05},
-    {'s_range': (1.78, 1.965), 'weight': 2.4251717413161735},
+    {'s_range': (1.53, 1.58), 'weight': 1.3470908345658443},
+    {'s_range': (1.58, 1.63), 'weight': 0.7782585376415466},
+    {'s_range': (1.63, 1.68), 'weight': 0.5955636683111123},
+    {'s_range': (1.68, 1.73), 'weight': 0.49977429496440834},
+    {'s_range': (1.78, 1.965), 'weight': 1.3571773681747605},
     {'s_range': (2.015, 2.2), 'weight': 1.0},
 ]
 
