@@ -184,17 +184,6 @@ def plot_results(cases, results, output_dir):
     y = [results[c['case_id']]['rerun_emittance_pm_4ip'] for c in scan]
     fig, ax = plt.subplots(figsize=(8.2, 5.2), layout='constrained')
     ax.plot(x, y, 'o-', color='#205a91', lw=1.8, ms=5.5, label='Six segments — fresh reruns')
-    for case in cases:
-        if len(case['segments']) != 6:
-            ax.scatter(abs(case['parameters']['B0_local']),
-                       results[case['case_id']]['rerun_emittance_pm_4ip'],
-                       marker='D', s=48, color='#c56a18',
-                       label=f"Earlier {len(case['segments'])}-segment result")
-    best = min(range(len(y)), key=y.__getitem__)
-    ax.scatter(x[best], y[best], s=105, facecolors='none', edgecolors='#205a91', zorder=4)
-    ax.annotate(f'Lowest tested point\n{x[best]:g} T: {y[best]:.6f} pm',
-                xy=(x[best], y[best]), xytext=(1.8, 0.8),
-                arrowprops=dict(arrowstyle='->', color='#444444'), fontsize=10)
     ax.set(xlabel=r'$|B_{0,\mathrm{local}}|$ [T]',
            ylabel=r'Vertical emittance $\varepsilon_y$ [pm] (4 IPs)',
            title='Solenoid compensation: optimized weights at each field',

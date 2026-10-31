@@ -25,11 +25,11 @@ theta = -0.015
 B0 = 3 # T
 r0 = 0.13
 
-B0_local = -2.0 * B0 / 3.          # T
-r0_local = 0.1499                  # m
-l_local = 0.6                      # m
+B0_local = -2.5 # T
+r0_local = 0.1499 # m
+l_local = 0.6 # m
 
-sol_half_length = 1.25                # m; screening coils also start here
+sol_half_length = 1.25 # m; screening coils also start here
 
 # First corrector segments: positive distances from the IP [m], mirrored
 # on the left. Specify exactly one powering option per segment:
@@ -38,11 +38,11 @@ sol_half_length = 1.25                # m; screening coils also start here
 # Weights are used as given, without normalization. Each side has its own
 # optimization knob. All segments share the knob with relative weights.
 first_corr_segments = [
-    {'s_range': (1.53, 1.58), 'weight': 0.2648294952640936},
-    {'s_range': (1.58, 1.63), 'weight': 0.250815344329937},
-    {'s_range': (1.63, 1.68), 'weight': 0.2651494981081337},
-    {'s_range': (1.68, 1.73), 'weight': 0.3180567693449662},
-    {'s_range': (1.78, 1.965), 'weight': 2.1738018106168324},
+    {'s_range': (1.53, 1.58), 'weight': 0.09490986203830125},
+    {'s_range': (1.58, 1.63), 'weight': 0.12312643703437282},
+    {'s_range': (1.63, 1.68), 'weight': 0.17268036196465997},
+    {'s_range': (1.68, 1.73), 'weight': 0.263448059275075},
+    {'s_range': (1.78, 1.965), 'weight': 2.4251717413161735},
     {'s_range': (2.015, 2.2), 'weight': 1.0},
 ]
 
