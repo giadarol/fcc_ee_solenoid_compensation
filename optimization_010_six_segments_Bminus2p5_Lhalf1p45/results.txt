@@ -1,0 +1,6 @@
+Six-segment optimization: B0 = 3 T; B0_local = -2.5 T; sol_half_length = 1.45 m
+Initial emittance = 4.2757223458 pm (4 IPs)
+Validated optimized emittance = 1.47194582024 pm (4 IPs)
+Weights = [0.08680807168973867, 0.07853838019589034, 0.08378758173374978, 0.08675208265185841, 0.48896937877012453, 1.0]
+Matching checks = {'ipa_orbit': True, 'ipa_optics': True}
+Two independent starts reached ~1.47196 pm; smaller-step refinement reached a plateau within matching noise. Search checkpoints stopped further iterations. Fresh orbit/optics tolerance checks and radiation analysis passed for the refined and independent candidates.

@@ -1,0 +1,381 @@
+{
+  "B0": 3,
+  "sol_half_length": 1.45,
+  "cases": [
+    {
+      "source": "optimization_013_Lhalf1p45/minus2/validated.json",
+      "B0": 3,
+      "r0": 0.13,
+      "sol_half_length": 1.45,
+      "first_corr_segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.20366477628398288
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.1452806914344583
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.1339153448924049
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.12818381910653748
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 0.5868299895195203
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "B0_local": -2.0,
+      "r0_local": 0.1499,
+      "l_local": 0.6,
+      "gemitt_y": 1.4892513680560721e-12,
+      "weights": [
+        0.20366477628398288,
+        0.1452806914344583,
+        0.1339153448924049,
+        0.12818381910653748,
+        0.5868299895195203,
+        1.0
+      ],
+      "emittance_pm_4ip": 1.4892513680560722,
+      "matching_checks": {
+        "ipa_orbit": true,
+        "ipa_optics": true
+      },
+      "matched_knobs": {
+        "right": -0.0001507549480999833,
+        "left": -0.00015139719692424918
+      },
+      "radiation_analysis_completed": true,
+      "status": "PASS"
+    },
+    {
+      "source": "optimization_013_Lhalf1p45/minus2p45/validated.json",
+      "B0": 3,
+      "r0": 0.13,
+      "sol_half_length": 1.45,
+      "first_corr_segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.09602707069429352
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.08241277564941088
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.08871819669765736
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.09060861322553355
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 0.4998095055645269
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "B0_local": -2.45,
+      "r0_local": 0.1499,
+      "l_local": 0.6,
+      "gemitt_y": 1.4711788173617491e-12,
+      "weights": [
+        0.09602707069429352,
+        0.08241277564941088,
+        0.08871819669765736,
+        0.09060861322553355,
+        0.4998095055645269,
+        1.0
+      ],
+      "emittance_pm_4ip": 1.471178817361749,
+      "matching_checks": {
+        "ipa_orbit": true,
+        "ipa_optics": true
+      },
+      "matched_knobs": {
+        "right": -0.00016677125575832998,
+        "left": -0.000167552034517634
+      },
+      "radiation_analysis_completed": true,
+      "status": "PASS"
+    },
+    {
+      "source": "optimization_010_six_segments_Bminus2p5_Lhalf1p45/selected_best.json",
+      "B0": 3,
+      "r0": 0.13,
+      "sol_half_length": 1.45,
+      "first_corr_segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.08680807168973867
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.07853838019589034
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.08378758173374978
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.08675208265185841
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 0.48896937877012453
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "B0_local": -2.5,
+      "r0_local": 0.1499,
+      "l_local": 0.6,
+      "gemitt_y": 1.4719458202436727e-12,
+      "emittance_pm_4ip": 1.4719458202436728,
+      "weights": [
+        0.08680807168973867,
+        0.07853838019589034,
+        0.08378758173374978,
+        0.08675208265185841,
+        0.48896937877012453,
+        1.0
+      ],
+      "matching_checks": {
+        "ipa_orbit": true,
+        "ipa_optics": true
+      },
+      "matched_knobs": {
+        "right": -0.0001683867986543742,
+        "left": -0.00016918380954798472
+      },
+      "radiation_analysis_completed": true,
+      "status": "PASS",
+      "source_result": "optimization_010_six_segments_Bminus2p5_Lhalf1p45/refine/validated.json",
+      "baseline_emittance_pm_4ip": 4.275722345800109,
+      "search_note": "Two independent starts reached ~1.47196 pm; smaller-step refinement reached a plateau within matching noise. Search checkpoints stopped further iterations. Fresh orbit/optics tolerance checks and radiation analysis passed for the refined and independent candidates."
+    },
+    {
+      "source": "optimization_013_Lhalf1p45/minus3/validated.json",
+      "B0": 3,
+      "r0": 0.13,
+      "sol_half_length": 1.45,
+      "first_corr_segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": 0.0016900556548123929
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": 0.024594625818418762
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.041941489419041765
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.051728463642095976
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 0.4015136300502143
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "B0_local": -3.0,
+      "r0_local": 0.1499,
+      "l_local": 0.6,
+      "gemitt_y": 1.5252969770238947e-12,
+      "weights": [
+        0.0016900556548123929,
+        0.024594625818418762,
+        0.041941489419041765,
+        0.051728463642095976,
+        0.4015136300502143,
+        1.0
+      ],
+      "emittance_pm_4ip": 1.5252969770238947,
+      "matching_checks": {
+        "ipa_orbit": true,
+        "ipa_optics": true
+      },
+      "matched_knobs": {
+        "right": -0.00018598422670179258,
+        "left": -0.00018694876611261344
+      },
+      "radiation_analysis_completed": true,
+      "status": "PASS"
+    },
+    {
+      "source": "optimization_013_Lhalf1p45/minus3p5/validated.json",
+      "B0": 3,
+      "r0": 0.13,
+      "sol_half_length": 1.45,
+      "first_corr_segments": [
+        {
+          "s_range": [
+            1.53,
+            1.58
+          ],
+          "weight": -0.056377997781351524
+        },
+        {
+          "s_range": [
+            1.58,
+            1.63
+          ],
+          "weight": -0.01585581199489202
+        },
+        {
+          "s_range": [
+            1.63,
+            1.68
+          ],
+          "weight": 0.0006975114694874802
+        },
+        {
+          "s_range": [
+            1.68,
+            1.73
+          ],
+          "weight": 0.020442531619415442
+        },
+        {
+          "s_range": [
+            1.78,
+            1.965
+          ],
+          "weight": 0.32666218623329285
+        },
+        {
+          "s_range": [
+            2.015,
+            2.2
+          ],
+          "weight": 1.0
+        }
+      ],
+      "B0_local": -3.5,
+      "r0_local": 0.1499,
+      "l_local": 0.6,
+      "gemitt_y": 1.6937852506053812e-12,
+      "weights": [
+        -0.056377997781351524,
+        -0.01585581199489202,
+        0.0006975114694874802,
+        0.020442531619415442,
+        0.32666218623329285,
+        1.0
+      ],
+      "emittance_pm_4ip": 1.6937852506053812,
+      "matching_checks": {
+        "ipa_orbit": true,
+        "ipa_optics": true
+      },
+      "matched_knobs": {
+        "right": -0.0002023467720083921,
+        "left": -0.0002034907855438265
+      },
+      "radiation_analysis_completed": true,
+      "status": "PASS"
+    }
+  ],
+  "best_tested_B0_local": -2.45,
+  "improvement_percent": 0.05210809198105126,
+  "excluded_cases": {
+    "minus0p5": "Stopped early after user narrowed search; failed 2e-5 agreement tolerance",
+    "minus1p5": "Stopped early after user narrowed search; failed 2e-5 agreement tolerance"
+  },
+  "note": "Best tested field, not a determination of the exact field minimum. Some weight searches stopped at numerical plateaus or checkpoints; see optimizer.json in each directory. Production 010 remains at -2.5 T."
+}

@@ -1,0 +1,11 @@
+B0 = 3 T; sol_half_length = 1.45 m; six segments with reoptimized weights
+Fresh validated vertical emittance, four-IP convention
+
+B0_local = -2.00 T: 1.489251368 pm
+B0_local = -2.45 T: 1.471178817 pm
+B0_local = -2.50 T: 1.471945820 pm
+B0_local = -3.00 T: 1.525296977 pm
+B0_local = -3.50 T: 1.693785251 pm
+
+Best tested field: -2.45 T; improvement over -2.5 T: 0.052108%
+Best tested field, not a determination of the exact field minimum. Some weight searches stopped at numerical plateaus or checkpoints; see optimizer.json in each directory. Production 010 remains at -2.5 T.
