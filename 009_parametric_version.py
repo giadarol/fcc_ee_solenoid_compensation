@@ -25,14 +25,14 @@ theta = -0.015
 B0 = 3 # T
 r0 = 0.13
 
-sol_half_length = 1.38                # m; screening coils also start here
+sol_half_length = 1.25                # m; screening coils also start here
 
 ds_start = 1.53                       # m
-ds_end = 2.18                         # m
+ds_end = 2.2                          # m
 ds_split = 0.2992680902334539          # m from ds_start
-k0sl_first_corr = -1.0199704431567958e-4
+k0sl_first_corr = -2e-4
 
-B0_local = -2.0                       # T
+B0_local = -1.0                       # T
 r0_local = 0.1499                     # m
 l_local = 0.5884884906480151           # m
 

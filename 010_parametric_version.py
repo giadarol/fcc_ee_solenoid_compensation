@@ -22,14 +22,19 @@ ip_names = ['ipa']
 # Tilt with respect to the beam axis
 theta = -0.015
 
-B0 = 3 # T
+ip_names = ['ipa']
+
+# Tilt with respect to the beam axis
+theta = -0.015
+
+B0 = 3. # T
 r0 = 0.13
 
-B0_local = -2.5 # T
+B0_local = -2.5 * B0 / 3. # T
 r0_local = 0.1499 # m
-l_local = 0.6 # m
 
-sol_half_length = 1.45 # m; screening coils also start here
+l_local = 0.6 # m
+sol_half_length = 1.25 # m; screening coils also start here
 
 # First corrector segments: positive distances from the IP [m], mirrored
 # on the left. Specify exactly one powering option per segment:
@@ -38,12 +43,8 @@ sol_half_length = 1.45 # m; screening coils also start here
 # Weights are used as given, without normalization. Each side has its own
 # optimization knob. All segments share the knob with relative weights.
 first_corr_segments = [
-    {'s_range': (1.53, 1.58), 'weight': 0.08680807168973867},
-    {'s_range': (1.58, 1.63), 'weight': 0.07853838019589034},
-    {'s_range': (1.63, 1.68), 'weight': 0.08378758173374978},
-    {'s_range': (1.68, 1.73), 'weight': 0.08675208265185841},
-    {'s_range': (1.78, 1.965), 'weight': 0.48896937877012453},
-    {'s_range': (2.015, 2.2), 'weight': 1.0},
+{'s_range': (1.78, 1.965), 'weight': 2.2289062500000005},
+{'s_range': (2.015, 2.2), 'weight': 1.0},
 ]
 
 if not first_corr_segments:
